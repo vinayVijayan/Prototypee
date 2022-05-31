@@ -1,0 +1,53 @@
+<mat-toolbar color="primary" style="padding-left: 690px;">
+  <span style="cursor:pointer" (click)="goToStore()">Store</span>
+</mat-toolbar>
+<div>
+  <mat-card>
+    <div style="display:flex;flex-direction:row" fxFlex="100%" fxLayout="column" fxLayout.xs="row">
+      <div>
+        <mat-form-field style="margin-left: 20px;" class="example-full-width" appearance="fill">
+          <mat-label>Customer Name</mat-label>
+          <input  type="text" [(ngModel)]="custname" matInput placeholder="Enter Name" >
+        </mat-form-field>
+        <mat-form-field style="margin-left: 20px;" class="example-full-width" appearance="fill">
+          <mat-label>Billing Number</mat-label>
+          <input  type="text" [(ngModel)]="billnum" matInput placeholder="Enter bill No" >
+        </mat-form-field>
+        <mat-form-field fxFlex="24%" style="margin-left: 20px;" class="example-full-width" appearance="fill">
+          <input matInput [matDatepicker]="picker2" placeholder="Bill Date" name="picker2" [max]="today"
+              [(ngModel)]="billdate" value="billdate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      
+    </div>
+    <div style="margin-top: 2rem;">
+      <table mat-table [dataSource]="datasource" >
+
+        <ng-container matColumnDef="SlNo">
+          <th mat-header-cell *matHeaderCellDef> SlNo </th>
+          <td mat-cell *matCellDef="let element ;  let i= index"> {{i+1}} </td>
+        </ng-container>
+        <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef> Item </th>
+          <td mat-cell *matCellDef="let element">{{element.item}}</td>
+        </ng-container>
+        
+        
+       
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef> Price per kg </th>
+          <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Amount </th>
+          <td mat-cell *matCellDef="let element">{{element.price}}</td>
+        </ng-container>
+       
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </mat-card>
+</div>

@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "ngx-image-viewer": "^1.0.13",
     "@angular/animations": "6.1.6",
     "@angular/cdk": "6.4.7",
     "@angular/common": "6.1.6",
@@ -24,7 +25,9 @@
     "@angular/router": "^6.1.6",
     "core-js": "2.5.7",
     "rxjs": "6.3.1",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "material-icons": "^0.2.3",
+    "web-animations-js": "2.3.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.7.5",

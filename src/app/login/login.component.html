@@ -1,34 +1,93 @@
+<mat-toolbar color="primary" style="padding-left: 690px;">
+ 
+    <span style="cursor:pointer" (click)="goToCustomer()">Customer</span>
+</mat-toolbar>
+<div>
+    <mat-card style="margin-top: 10px;">
+        <h2>Please save Your Billing ID: {{ID}}</h2>
 
-  <!-- <form action="" #form1="ngForm" >
-    <div class="mat">
-        <mat-form-field>
-          <mat-label>UserName</mat-label>
-          <input matInput autocomplete="off" type="text" [(ngModel)]="username"
-          name="user">    </mat-form-field>
-        <mat-form-field >
-          <input matInput autocomplete="off" placeholder="password here..." type="text" [(ngModel)]="password"
-          name="pass">    </mat-form-field>
-    </div>
-  </form> -->
+        <div style="display:flex;flex-direction:row" fxFlex="100%" fxLayout="column" fxLayout.xs="row">
+            <div>
+                <img src="assets/grains.png" alt="" height="100" width="100">
+            </div>
+            <div>
+                <mat-form-field style="margin-top: 70px;" appearance="fill">
+                    <mat-label>Select Grain</mat-label>
+                    <mat-select (ngModelChange)="onChange($event)" [(ngModel)]="grain" name="food">
+                        <mat-option *ngFor="let food of grains" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field style="margin-left: 20px;" class="example-full-width" appearance="fill">
+                    <mat-label>Select Quantity</mat-label>
+                    <input (input)="onSearchChange($event.target.value)" type="number" matInput placeholder="Select" value="Sushi">
+                  </mat-form-field>
+            </div>
 
-    <div  class="mat">
-      <form class="example-form" #form1="ngForm">
+        </div>
+        <div style="display:flex;flex-direction:row" fxFlex="100%" fxLayout="column" fxLayout.xs="row">
+            <div>
+                <img src="assets/download (4).png" alt="" height="100" width="100">
+            </div>
+            <div>
+                <mat-form-field style="margin-top: 50px;" appearance="fill">
+                    <mat-label>Select Fruit</mat-label>
+                    <mat-select (ngModelChange)="onChange1($event)" [(ngModel)]="fruit" name="food">
+                        <mat-option *ngFor="let food of fruits" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field style="margin-left: 20px;" class="example-full-width" appearance="fill">
+                    <mat-label>Select Quantity</mat-label>
+                    <input (input)="onSearchChange1($event.target.value)"  type="number" matInput placeholder="Select" value="Sushi">
+                  </mat-form-field>
+            </div>
 
-    <mat-card class="matcard" style="height: 200px; display: flex;flex-direction: column;">
+        </div>
+        <div style="display:flex;flex-direction:row" fxFlex="100%" fxLayout="column" fxLayout.xs="row">
+            <div>
+                <img src="assets/vege.png" alt="" height="100" width="100">
+            </div>
+            <div>
+                <mat-form-field style="margin-top: 50px;" appearance="fill">
+                    <mat-label>Select a Vegetable</mat-label>
+                    <mat-select (ngModelChange)="onChange3($event)" [(ngModel)]="veget" name="food">
+                        <mat-option *ngFor="let food of vege" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field style="margin-left: 20px;" class="example-full-width" appearance="fill">
+                    <mat-label>Select Quantity</mat-label>
+                    <input (input)="onSearchChange2($event.target.value)" type="number" matInput placeholder="Select" value="Sushi">
+                  </mat-form-field>
+            </div>
 
-    <mat-form-field class="w-100">
-      <input matInput placeholder="Favorite food">
-    </mat-form-field>
-  
-    <mat-form-field class="w-100">
-      <input matInput placeholder="Leave a comment">
-    </mat-form-field>
-  </mat-card>
-</form>
+        </div>
+        <div style="display:flex;flex-direction:row" fxFlex="100%" fxLayout="column" fxLayout.xs="row">
+            <div>
+                <img src="assets/tool.png" alt="" height="100" width="100">
+            </div>
+            <div>
+                <mat-form-field style="margin-top: 50px;" appearance="fill">
+                    <mat-label>Select a Tool</mat-label>
+                    <mat-select (ngModelChange)="onChange4($event)" [(ngModel)]="equim" name="food">
+                        <mat-option *ngFor="let food of housholds" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field style="margin-left: 20px;" class="example-full-width" appearance="fill">
+                    <mat-label>Select Quantity</mat-label>
+                    <input (input)="onSearchChange3($event.target.value)" type="number" matInput placeholder="Select" value="Sushi">
+                  </mat-form-field>
+            </div>
 
+        </div>
+        <button mat-raised-button color="primary" class="mat-elevation-z12 box-button"
+         [ngStyle]="{'height':'40px'}"
+          (click)="confirm()">Get Bill</button>
+    </mat-card>
 </div>
-
-
-
-
-
