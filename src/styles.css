@@ -6,7 +6,9 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 
-
+.app.teal-light .mat-flat-button.mat-primary, .app.teal-light .mat-raised-button.mat-primary, .app.teal-light .mat-fab.mat-primary, .app.teal-light .mat-mini-fab.mat-primary {
+    background-color: #FFC107 !important;
+}
 .app.teal-light .mat-toolbar{
     min-height: 40px !important;
 }
@@ -354,3 +356,36 @@ tr.mat-header-row {
 .app.teal-light .mat-flat-button.mat-primary[disabled], .app.teal-light .mat-flat-button.mat-accent[disabled], .app.teal-light .mat-flat-button.mat-warn[disabled], .app.teal-light .mat-flat-button[disabled][disabled], .app.teal-light .mat-raised-button.mat-primary[disabled], .app.teal-light .mat-raised-button.mat-accent[disabled], .app.teal-light .mat-raised-button.mat-warn[disabled], .app.teal-light .mat-raised-button[disabled][disabled], .app.teal-light .mat-fab.mat-primary[disabled], .app.teal-light .mat-fab.mat-accent[disabled], .app.teal-light .mat-fab.mat-warn[disabled], .app.teal-light .mat-fab[disabled][disabled], .app.teal-light .mat-mini-fab.mat-primary[disabled], .app.teal-light .mat-mini-fab.mat-accent[disabled], .app.teal-light .mat-mini-fab.mat-warn[disabled], .app.teal-light .mat-mini-fab[disabled][disabled] {
     background-color: rgba(0, 0, 0, 0.12) !important;
 }
+
+
+.cantact_info {
+    width: 50%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-size: cover;
+    background-position: center center;
+}
+
+
+  @media screen and (max-width: 100px) {
+    .cantact_info {
+        display: none;
+    } 
+
+  }
+  .item{
+    width: 25%;
+    display: inline-block;
+    @media only screen and (max-width: $tablet){
+        width: 50%
+    }
+    @media only screen and (max-width: $mobile-large){
+        width: 100%
+    }
+  }
+ 

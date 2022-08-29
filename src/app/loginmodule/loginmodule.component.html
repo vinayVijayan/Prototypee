@@ -1,0 +1,27 @@
+<mat-sidenav-container>
+  <div fxLayout="row" fxLayoutAlign="center center" class="h-100"
+  style="background-image: url('assets/background.jpg');">
+  <form #loginform="ngForm" (ngSubmit)="onSubmit()">
+
+<mat-card-content fxLayout="column" fxLayoutAlign="end center" class="box-content">
+
+  <mat-card style="margin-top: 300px;width:40%;margin-left: 20  px;"  class="mat-elevation-z12 box-content-inner">
+    <span class="box-content-header" style="margin-left:95px">member login</span>
+        <mat-form-field>
+          <input matInput placeholder="User ID"   [(ngModel)]="userid" autocomplete="off" name="userid" (focusout)="getUserBranch('E')"  #useridtext="ngModel">
+          <mat-error *ngIf="useridtext.errors?.required">User ID is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password"   [(ngModel)]="Passwd" autocomplete="off"  name="pass"   #passwordnum="ngModel">
+        <mat-error *ngIf="passwordnum.errors?.required">User ID is required</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="mat-elevation-z12 box-button"
+    type="submit">SIGN IN</button>
+  </mat-card>
+</mat-card-content>
+
+</form>
+
+</div>
+</mat-sidenav-container>
+
